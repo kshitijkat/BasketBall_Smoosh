@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_leagueactivity.*
+import model.Player
 
 class leagueactivity : AppCompatActivity() {
-    var Selected=""
+    //var selected=""
+    var player= Player("","")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_leagueactivity)
@@ -17,25 +19,25 @@ class leagueactivity : AppCompatActivity() {
     {
         womenleaguebtn.isChecked=false;
         coedleaguebtn.isChecked=false;
-        Selected="mens"
+        player.league="mens"
     }
     fun onwomenclicked(view: View)
     {
         coedleaguebtn.isChecked=false;
         mensLeagueBtn.isChecked=false;
-        Selected="womens"
+        player.league="womens"
 
     }
     fun oncoedclicked(view: View)
     {
         womenleaguebtn.isChecked=false;
         mensLeagueBtn.isChecked=false;
-        Selected="coed"
+        player.league="coed"
     }
     fun leagueNextClicked(view: View){
-        if(Selected!="") {
+        if(player.league!="") {
             val skillActivity = Intent(this, SkillActivity::class.java)
-            skillActivity.putExtra(EXTRA_LEAGUE,Selected)
+            skillActivity.putExtra(EXTRA_PLAYER,player)
             startActivity(skillActivity)
         }else
         {
@@ -44,3 +46,5 @@ class leagueactivity : AppCompatActivity() {
     }
 
 }
+
+

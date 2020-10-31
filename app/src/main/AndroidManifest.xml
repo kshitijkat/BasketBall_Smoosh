@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SkillActivity"></activity>
+        <activity android:name=".endscreen"></activity>
+        <activity android:name=".SkillActivity" />
         <activity android:name=".leagueactivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
